@@ -36,7 +36,8 @@ export default defineComponent({
     name: 'FormComponent',
     data () {
         return {
-            timeInSeconds: 0
+            timeInSeconds: 0,
+            timer: 0
         }
     },
     computed: {
@@ -46,13 +47,12 @@ export default defineComponent({
     },
     methods: {
         start () {
-            setInterval(() => {
+            this.timer = setInterval(() => {
                 this.timeInSeconds += 1;
             }, 1000);
-            console.log('Iniciando');
         },
         finish () {
-            console.log('Finalizando');
+            clearInterval(this.timer);
         }
     }
 });
