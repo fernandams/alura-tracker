@@ -4,7 +4,7 @@
       <BarraLateral />
     </div>
     <div class="column is-three-quarter">
-
+      <FormComponent />
     </div>
   </main>
 </template>
@@ -12,10 +12,14 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import BarraLateral from './components/BarraLateral.vue';
+import FormComponent from './components/FormComponent.vue';
 
 export default defineComponent({
     name: 'App',
-    components: { BarraLateral }
+    components: {
+      BarraLateral,
+      FormComponent
+    }
 });
 </script>
 
