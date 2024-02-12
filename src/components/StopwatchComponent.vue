@@ -22,6 +22,7 @@ import TimerComponent from './TimerComponent.vue';
 
 export default defineComponent({
     name: 'StopwatchComponent',
+    emits: ['stopwatchFinished'],
     data() {
         return {
             timeInSeconds: 0,
@@ -39,6 +40,8 @@ export default defineComponent({
         finish() {
             this.isTimerRunning = false;
             clearInterval(this.timer);
+            this.$emit('stopwatchFinished', this.timeInSeconds);
+            this.timeInSeconds = 0;
         }
     },
     components: { TimerComponent }
