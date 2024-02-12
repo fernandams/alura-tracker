@@ -1,24 +1,15 @@
 <template>
-    <div class="is-flex is-align-items-center is-justify-content-space-between">
+    <section class="is-flex is-align-items-center is-justify-content-space-between">
         <TimerComponent :timeInSeconds="timeInSeconds" />
-        <button class="button" @click="start" :disabled="isTimerRunning">
-            <span class="icon">
-                <i class="fas fa-play"></i>
-            </span>
-            <span>play</span>
-        </button>
-        <button class="button" @click="finish" :disabled="!isTimerRunning">
-            <span class="icon">
-                <i class="fas fa-stop"></i>
-            </span>
-            <span>stop</span>
-        </button>
-    </div>
+        <ButtonComponent @clicked="start" icon="fas fa-play" text="play" :disabled="isTimerRunning"/>
+        <ButtonComponent @clicked="finish" icon="fas fa-stop" text="stop" :disabled="!isTimerRunning"/>
+    </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import TimerComponent from './TimerComponent.vue';
+import ButtonComponent from './ButtonComponent.vue';
 
 export default defineComponent({
     name: 'StopwatchComponent',
@@ -44,7 +35,10 @@ export default defineComponent({
             this.timeInSeconds = 0;
         }
     },
-    components: { TimerComponent }
+    components: {
+        TimerComponent,
+        ButtonComponent
+    }
 });
 
 </script>
