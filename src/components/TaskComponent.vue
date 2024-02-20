@@ -1,5 +1,3 @@
-
-import TimerComponent from './TimerComponent.vue';
 <template>
     <div class="box has-text-weight-bold">
         <div class="columns">
