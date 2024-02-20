@@ -20,9 +20,9 @@
 import { defineComponent } from 'vue';
 import StopwatchComponent from './StopwatchComponent.vue';
 
-
 export default defineComponent({
     name: 'FormComponent',
+    emits: ['whenSavingTask'],
     components: {
         StopwatchComponent
     },
@@ -33,8 +33,10 @@ export default defineComponent({
     },
     methods: {
         finishTask (elapsedTime: number) : void {
-            console.log('Tempo da tarefa: ', elapsedTime);
-            console.log('Descrição da tarefa: ', this.description);
+            this.$emit('whenSavingTask', {
+                durationInSeconds: elapsedTime,
+                description: this.description
+            });
             this.description = '';
         }
     }
