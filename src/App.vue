@@ -3,7 +3,7 @@
     <div class="column is-one-quarter">
       <SidebarComponent />
     </div>
-    <div class="column is-three-quarter">
+    <div class="column is-three-quarter content">
       <FormComponent @whenSavingTask="saveTask" />
       <div class="list">
         <TaskComponent v-for="(task, index) in tasks" :key="index" :task="task"/>
@@ -53,5 +53,16 @@ export default defineComponent({
 <style>
 .list {
   padding: 1.25rem;
+}
+main {
+  --primary-bg:#fff;
+  --primary-text: #000;
+}
+main.dark-mode {
+  --primary-bg: #2b2d42;;
+  --primary-text: #ddd;
+}
+.content {
+  background-color: var(--primary-bg);
 }
 </style>
