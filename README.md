@@ -4,6 +4,8 @@ This is a project developed during ["Vue3: explorando o framework"](https://www.
 
 The Alura Tracker allows users to manage their tasks and track the time spent on each activity.
 
+The project is currently live in production. You can access it at [https://alura-tracker-fernandams.vercel.app/](https://alura-tracker-fernandams.vercel.app/).
+
 ## Requirements used during development
 
 - Node: v21.6.1
